@@ -6,4 +6,4 @@ client.on('ready', () => {
     client.user.setStatus('dnd')
 })
 
-client.login(process.evn.TOKEN)
+client.login(process.env.TOKEN)
