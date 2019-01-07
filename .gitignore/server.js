@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const client = new Discord.client
+const client = new Discord.Client()
 
 client.on('ready', () => {
     client.user.setGame('I CAN DO ANYTHING')
