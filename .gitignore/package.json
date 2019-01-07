@@ -1,0 +1,14 @@
+{
+"name": "JEVIL",
+"version": "0.0.1",
+"description": "I CAN DO ANYTHING",
+"main": "server.js",
+"scripts": {
+    "test": "node server.js"
+},
+"author": "MTGPROD",
+"license": "ISC",
+"dependencies": {
+    "discord.js": "^14.2
+}
+}
