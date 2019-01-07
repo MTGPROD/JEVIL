@@ -9,6 +9,6 @@
 "author": "MTGPROD",
 "license": "ISC",
 "dependencies": {
-    "discord.js": "^14.2
+    "discord.js": "^11.4.2"
 }
 }
