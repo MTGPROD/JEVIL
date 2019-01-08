@@ -16,7 +16,7 @@ client.on('message', message => {
 
     try {
         delete require.cache[require.resolve(`./cmds/${cmd}.js`)]
-        let commandFile = require(`./commands/${cmd}.js`)
+        let commandFile = require(`./cmds/${cmd}.js`)
         commandFile.run(client, message, args);
     } catch (e) {
         console.log(e.stack)
