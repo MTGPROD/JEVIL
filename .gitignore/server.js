@@ -1,12 +1,11 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
+const prefix = 'j!';
 
 client.on('ready', () => {
     client.user.setGame('I CAN DO ANYTHING')
     client.user.setStatus('dnd')
 })
-
-
 
 client.on('message', message => {
     let args = message.content.slice(prefix.length).trim().split(' ');
@@ -17,14 +16,8 @@ client.on('message', message => {
 
     try {
         delete require.cache[require.resolve(`./cmds/${cmd}.js`)]
-
-        
-      
-            
-
-
         let commandFile = require(`./commands/${cmd}.js`)
-        commandFile.run(client, message, args, ops);
+        commandFile.run(client, message, args);
     } catch (e) {
         console.log(e.stack)
     }
