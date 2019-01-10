@@ -10,5 +10,8 @@ exports.run = (client, message, args) => {
      const embed = new Discord.RichEmbed()
            .setTitle('Gift')
            .setDescription(`[===============]\n${c1} | ${c2} | ${c3} | ${c4} | ${c5}\n[======^========]`)
-     message.channel.send(embed)
+     message.channel.send(embed).then(msg => {
+          embed.setDescription(`[===============]\n${c5} | ${c1} | ${c2} | ${c3} | ${c4}\n[======^========]`)
+          msg.edit(embed)
+     })
 }
