@@ -11,4 +11,4 @@ exports.run = (client, message, args) => {
            .setTitle('Gift')
            .setDescription(`[===============]\n${c1} | ${c2} | ${c3} | ${c4} | ${c5}\n[=======^======]`)
      message.channel.send(embed)
-})
+}
