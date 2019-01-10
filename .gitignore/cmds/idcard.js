@@ -10,3 +10,4 @@ exports.run = (client, message, args) => {
          .setTitle('ID card')
          .addField('Name', cards.id.name)
     message.channel.send(cardEmbed)
+})
