@@ -1,6 +1,12 @@
 const Discord = require('discord.js')
+const cards = require('./cards.json')
 
 exports.run = (client, message, args) => {
-    var name = client.channels.get('526348347506819095').fetchMessage('532115649556905994')
+    var name = cards.name
+    var id = message.author.id
     
-    message.channel.send(name.content)
+    
+    const cardEmbed = new Discord.RichEmbed()
+         .setTitle('ID card')
+         .addField('Name', cards.id.name)
+    message.channel.send(cardEmbed)
