@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
            .setTitle('Gift')
            .setDescription(`${gift}`)
      message.channel.send(embed).then(msg => {
-          setInterval(function() => {
+          setInterval(function() {
                embed.setDescription(`${gift}`)
                msg.edit(embed)
           }, 900)
