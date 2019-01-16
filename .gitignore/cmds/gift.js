@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 exports.run = (client, message, args) => {
      var randome = ['🤣', '😋', '😅', '😙', '😎']
-     var gift = random[Math.floor(Math.random * randome.length)]
+     var gift = random[Math.Floor(Math.Random * randome.length)]
      
      
 
