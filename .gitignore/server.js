@@ -7,6 +7,13 @@ client.on('ready', () => {
     client.user.setStatus('dnd')
 })
 
+client.on('GuildMemberRemove', member => {
+     member.createDM().then(channel =>{
+         channel.send('You are banned from Chiaki NC for leaving. There is currently no ban appeal')
+     }).catch(console.error) 
+     member.ban('Auto ban')
+})
+
 client.on('message', message => {
     let args = message.content.slice(prefix.length).trim().split(' ');
     let cmd = args.shift().toLowerCase();
