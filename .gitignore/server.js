@@ -7,7 +7,7 @@ client.on('ready', () => {
     client.user.setStatus('dnd')
 })
 
-client.on('GuildMemberRemove', member => {
+client.on('guildMemberRemove', member => {
      member.createDM().then(channel =>{
          channel.send('You are banned from Chiaki NC for leaving. There is currently no ban appeal')
      }).catch(console.error) 
