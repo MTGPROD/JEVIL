@@ -10,6 +10,6 @@ exports.run = (client, message, args) => {
         message.member.setRoles(['553282040011816960'])
            const registerEmbed = new Discord.RichEmbed()
                  .setColor('#e02c2c')
-                 .setDescription(`Vous êtes désormais enregistré pour la bêta. 📝 ${NdP.members.size + 1}/12`)
+                 .setDescription(`Vous êtes désormais enregistré pour la bêta. 📝 ${NdP.members.size + 1}/12\n\n<#553281783093919762>, <#553281826437726219>, <#553281915621343260>.`)
            message.channel.send(registerEmbed) 
 }
