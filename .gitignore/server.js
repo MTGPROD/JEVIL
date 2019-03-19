@@ -1,17 +1,36 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const prefix = 'j!';
+const prefix = '+';
+
+var gameData = { 
+     game: false,
+     terrain: 'Rien'
+}
+
+let p1 = {
+		name: 'Rien',
+		tag: 'Rien',
+		id: 'Rien',
+		avatar: 'Rien',
+		character: 'Aucun',
+		inscrit: false,
+        pourcent: '0%' 
+    }
+    
+let p2 = {
+    	name: 'Rien',
+        tag: 'Rien',
+        id: 'Rien',
+        avatar: 'Rien',
+        character: 'Rien',
+        inscrit: false,
+        pourcent: '0%'
+    }
+}
 
 client.on('ready', () => {
-    client.user.setGame('I CAN DO ANYTHING')
+    client.user.setGame('Prefix +')
     client.user.setStatus('dnd')
-})
-
-client.on('guildMemberRemove', member => {
-     member.createDM().then(channel =>{
-         channel.send('You are banned from Chiaki NC for leaving. There is currently no ban appeal')
-     }).catch(console.error) 
-     member.ban('Auto ban')
 })
 
 client.on('message', message => {
@@ -24,7 +43,7 @@ client.on('message', message => {
     try {
         delete require.cache[require.resolve(`./cmds/${cmd}.js`)]
         let commandFile = require(`./cmds/${cmd}.js`)
-        commandFile.run(client, message, args);
+        commandFile.run(client, message, args, gameData, p1,p2);
     } catch (e) {
         console.log(e.stack)
     }
