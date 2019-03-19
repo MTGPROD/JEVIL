@@ -47,12 +47,12 @@ client.on('message', message => {
 
 
     try {
-        delete require.cache[require.resolve(`./${cmd}.js`)]
-        let commandFile = require(`./${cmd}.js`)
+        delete require.cache[require.resolve(`./cmds/${cmd}.js`)]
+        let commandFile = require(`./cmds/${cmd}.js`)
         commandFile.run(client, message, args, gameData, p1,p2);
     } catch (e) {
         console.log(e.stack)
     }
 });
 
-client.login(process.env.TOKEN
+client.login(process.env.TOKEN) 
