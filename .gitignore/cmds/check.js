@@ -6,6 +6,6 @@ exports.run = (client, message, args, gameData, p1, p2) => {
 	
 	const mainEmbed = new Discord.RichEmbed()
 	     .setTitle("Trackeur d'anomalies")
-	     .addField('Données de jeu',`**Partie en cours** ${gameData.active}`)
+	     .addField('Données de jeu',`**Partie en cours** \`${gameData.active}\`\n **Balle smash sur le terrain** \`${gameData.smashball}\``)
 	message.channel.send(mainEmbed)
 }
