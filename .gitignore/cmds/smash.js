@@ -41,5 +41,5 @@ exports.run = (client, args, message, gameData, p1, p2, p3, p4) => {
     	           message.channel.send('Temps écoulé, personne n\'as eu la balle smash.')
     	    }
            gameData.smashBall = false
-     }
+     })
 }
