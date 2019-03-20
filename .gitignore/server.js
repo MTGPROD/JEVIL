@@ -23,7 +23,6 @@ var p1 = {
 		character: false,
         percentage: 0,
         chances: 0,
-        character: false,
         mj: false
 }
     
@@ -36,7 +35,6 @@ var p2 = {
 		character: false,
         percentage: 0,
         chances: 0,
-        character: false,
         mj: false
 }
     
@@ -48,8 +46,7 @@ var p3 = {
 		avatar: false,
 		character: false,
         percentage: 0,
-        chances: 0,
-        character: false,
+        chances: 0
         mj: false
 }
     
@@ -62,7 +59,6 @@ var p4 = {
 		character: false,
         percentage: 0,
         chances: 0,
-        character: false,
         mj: false
     }
 
