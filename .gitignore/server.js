@@ -2,14 +2,14 @@ const client = new Discord.Client()
 const prefix = '+';
 
 var gameData = {
-     active: false
-     smashBall: false
-     turn: 0
-     arenaEvent: false
-     p1active: false 
-     p2active: false 
-     p3active: false
-     p4active: false
+     active: false,
+     smashBall: false,
+     turn: 0,
+     arenaEvent: false,
+     p1active: false,
+     p2active: false,
+     p3active: false,
+     p4active: false,
      time: 0
 } 
 
@@ -20,9 +20,9 @@ var p1 = {
 		id: false,
 		avatar: false,
 		character: false,
-        percentage: 0
-        chances: 0
-        character: false 
+        percentage: 0,
+        chances: 0,
+        character: false,
         mj: false
 }
     
@@ -33,9 +33,9 @@ var p2 = {
 		id: false,
 		avatar: false,
 		character: false,
-        percentage: 0
-        chances: 0
-        character: false 
+        percentage: 0,
+        chances: 0,
+        character: false,
         mj: false
 }
     
@@ -46,9 +46,9 @@ var p3 = {
 		id: false,
 		avatar: false,
 		character: false,
-        percentage: 0
-        chances: 0
-        character: false 
+        percentage: 0,
+        chances: 0,
+        character: false,
         mj: false
 }
     
@@ -59,9 +59,9 @@ var p4 = {
 		id: false,
 		avatar: false,
 		character: false,
-        percentage: 0
-        chances: 0
-        character: false 
+        percentage: 0,
+        chances: 0,
+        character: false,
         mj: false
     }
 
