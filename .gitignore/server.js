@@ -46,7 +46,7 @@ var p3 = {
 		avatar: false,
 		character: false,
         percentage: 0,
-        chances: 0
+        chances: 0, 
         mj: false
 }
     
