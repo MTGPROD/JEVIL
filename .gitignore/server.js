@@ -1,31 +1,69 @@
-const Discord = require('discord.js')
 const client = new Discord.Client()
 const prefix = '+';
 
 var gameData = {
      active: false
+     smashBall: false
+     turn: 0
+     arenaEvent: false
+     p1active: false 
+     p2active: false 
+     p3active: false
+     p4active: false
+     time: 0
 } 
 
 var p1 = {
-		name: 'Rien', 
-		tag: 'Rien',
-		id: 'Rien',
-		avatar: 'Rien',
-		character: 'Rien',
-		inscrit: false,
-                pourcent: '0%' 
-    }
+	    active: false,
+		name: false,
+		tag: false,
+		id: false,
+		avatar: false,
+		character: false,
+        percentage: 0
+        chances: 0
+        character: false 
+        mj: false
+}
     
 var p2 = {
-    	name: 'Rien', 
-        tag: 'Rien',
-        id: 'Rien',
-        avatar: 'Rien',
-        character: 'Rien',
-        inscrit: false, 
-        pourcent: '0%'
+	    active: false,
+		name: false,
+		tag: false,
+		id: false,
+		avatar: false,
+		character: false,
+        percentage: 0
+        chances: 0
+        character: false 
+        mj: false
+}
+    
+var p3 = {
+	    active: false,
+		name: false,
+		tag: false,
+		id: false,
+		avatar: false,
+		character: false,
+        percentage: 0
+        chances: 0
+        character: false 
+        mj: false
+}
+    
+var p4 = {
+	    active: false,
+		name: false,
+		tag: false,
+		id: false,
+		avatar: false,
+		character: false,
+        percentage: 0
+        chances: 0
+        character: false 
+        mj: false
     }
-	
 
 client.on('ready', () => {
     client.user.setGame('Veuillez vous inscrire avant Avril | +register')
@@ -40,16 +78,11 @@ client.on('message', message => {
 
     if(message.author.bot) return;
     if(!message.content.startsWith(prefix)) return;
-    
-	
-    
-
-
 
     try {
         delete require.cache[require.resolve(`./cmds/${cmd}.js`)]
         let commandFile = require(`./cmds/${cmd}.js`)
-        commandFile.run(client, message, args, gameData, p1,p2);
+        commandFile.run(client, message, args, gameData, p1, p2, p3, p4);
     } catch (e) {
         console.log(e.stack)
     }
