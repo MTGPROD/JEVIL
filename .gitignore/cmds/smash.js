@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 
-exports.run = (client, args, message, gameData, p1, p2, p3, p4) => {
+exports.run = (message, client,args, gameData, p1, p2, p3, p4) => {
 	if(message.author.id === p1.id) {
 		if(p1.mj === false) return message.channel.send("Tu n'est pas MJ.")
     } else {
