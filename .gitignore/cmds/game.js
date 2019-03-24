@@ -84,18 +84,21 @@ exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
 		     p2.identity = message.author.id
 		     p2.avatar = message.author.avatarURL
 		     p2.active = true
+		     return message.channel.send('Tu es inscrit en tant que joueur 2')
 	   } else if (p3.active === false) {
 		      p3.name = message.author.username
 		     p3.tag = message.author.discriminator
 		     p3.identity = message.author.id
 		     p3.avatar = message.author.avatarURL
 		     p3.active = true
+		      return message.channel.send('Tu es inscrit en tant que joueur 3')
 	   } else if (p3.active === false) {
 		    p4.name = message.author.username
 		     p4.tag = message.author.discriminator
 		     p4.identity = message.author.id
 		     p4.avatar = message.author.avatarURL
 		     p4.active = true
+		      return message.channel.send('Tu es inscrit en tant que joueur 4')
 	   } else {
 		    return message.channel.send("Il n'y a plus de places, désolé")
 	   }
