@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
 	
 	if(args[0] === 'reset') {
-		gameDate.active = false
+		gameData.active = false
 		gameData.smashBall = false 
 		gameData.turn = 0
 		gameData.arenaEvent = false
@@ -13,7 +13,7 @@ exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
 		gameData.p4active = false
 		gameData.time = 0
 		p1.active = false
-		p1name = false
+		p1.name = false
 		p1.tag = false
 	    p1.identity = false
 		p1.avatar = false
@@ -35,7 +35,7 @@ exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
         p2.smashPowerChance = 0
         p2.mj = false 
         p3.active = false
-		p3name = false
+		p3.name = false
 		p3.tag = false
 	    p3.identity = false
 		p3.avatar = false
@@ -89,7 +89,7 @@ exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
 		     p3.identity = message.author.id
 		     p3.avatar = message.author.avatarURL
 		     p3.active = true
-	   } else if {
+	   } else if (p4.active === false) {
 		    p4.name = message.author.username
 		     p4.tag = message.author.discriminator
 		     p4.identity = message.author.id
