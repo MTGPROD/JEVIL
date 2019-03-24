@@ -12,6 +12,7 @@ var gameData = {
      p3active: false,
      p4active: false,
      time: 0
+     ready: false,
 } 
 
 var p1 = {
@@ -32,7 +33,7 @@ var p2 = {
 	    active: false,
 		name: false,
 		tag: false,
-		id: false,
+		identity: false,
 		avatar: false,
 		character: false,
         percentage: 0,
