@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
 	
 	if(args[0] === 'reset') {
-		gameData.active = false
+		gameDate.active = false
 		gameData.smashBall = false 
 		gameData.turn = 0
 		gameData.arenaEvent = false
@@ -13,7 +13,7 @@ exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
 		gameData.p4active = false
 		gameData.time = 0
 		p1.active = false
-		p1.name = false
+		p1name = false
 		p1.tag = false
 	    p1.identity = false
 		p1.avatar = false
@@ -35,7 +35,7 @@ exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
         p2.smashPowerChance = 0
         p2.mj = false 
         p3.active = false
-		p3.name = false
+		p3name = false
 		p3.tag = false
 	    p3.identity = false
 		p3.avatar = false
@@ -61,17 +61,18 @@ exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
 	
 	if(args[0] === 'create') {
 		if(gameData.active === true) return message.channel.send("Une partie est déjà en cours, Bientôt vous pourrez démarrer plus parties a la fois mais ce n'est pas possible actuellement.")
-		gameData.active = true
+		gameData = true
 		p1.name = message.author.username
 		p1.tag = message.author.discriminator 
 		p1.id = message.author.id
 		p1.avatar = message.author.avatarURL
 		p1.active = true
-		message.channel.send("La partie a été créée, les autres joueurs faîtes `+join` pour rejoindre la partie.")
+		message.channel.send("La partie a été créée, les autres joueurs faîtes `+game join` pour rejoindre la partie.")
      }
 
 	
 	if(args[0] === 'join') {
+		if(gameData.active === false) return message.channel.send('Aucune partie en cours, faites `+game create` pour commencer une nouvelle partie.')
 		if(message.author.id === p1.identity) return message.channel.send('Tu est déjà dans la partie')
 		if(message.author.id === p2.identity) return message.channel.send('Tu est déjà dans la partie')
 		if(message.author.id === p3.identity) return message.channel.send('Tu est déjà dans la partie')
@@ -89,7 +90,7 @@ exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
 		     p3.identity = message.author.id
 		     p3.avatar = message.author.avatarURL
 		     p3.active = true
-	   } else if (p4.active === false) {
+	   } else if (p3.active === false) {
 		    p4.name = message.author.username
 		     p4.tag = message.author.discriminator
 		     p4.identity = message.author.id
