@@ -11,8 +11,8 @@ var gameData = {
      p2active: false,
      p3active: false,
      p4active: false,
-     time: 0
-     ready: false,
+     time: 0, 
+     ready: false
 } 
 
 var p1 = {
