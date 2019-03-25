@@ -1,7 +1,16 @@
 const Discord = require('discord.js')
 
 exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
-	
+	if(args[0] === 'ready') {
+		if(gameData.active === false) return message.channel.send('Aucune partie en cours, faites `+game create` pour commencer une nouvelle partie.')
+		if(p1.character === false) return message.channel.send('Des joueurs n\'ont pas choisi de personnages, utilisez `+perso choose <nom du perso>` pour choisir un personnage.')
+		if(p2.character === false) return message.channel.send('Des joueurs n\'ont pas choisi de personnages, utilisez `+perso choose <nom du perso>` pour choisir un personnage.')
+		if(p3.character === false) return message.channel.send('Des joueurs n\'ont pas choisi de personnages, utilisez `+perso choose <nom du perso>` pour choisir un personnage.')
+		if(p4.character === false) return message.channel.send('Des joueurs n\'ont pas choisi de personnages, utilisez `+perso choose <nom du perso>` pour choisir un personnage.')
+		message.channel.send('La partie commence...')
+		gameData.active = true
+	    gameData.ready = true
+    }
 	if(args[0] === 'reset') {
 		gameDate.active = false
 		gameData.smashBall = false 
