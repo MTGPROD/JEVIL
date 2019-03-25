@@ -70,7 +70,7 @@ exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
 	
 	if(args[0] === 'create') {
 		if(gameData.active === true) return message.channel.send("Une partie est déjà en cours, Bientôt vous pourrez démarrer plus parties a la fois mais ce n'est pas possible actuellement.")
-		gameData.active mp = true
+		gameData.active = true
 		p1.name = message.author.username
 		p1.tag = message.author.discriminator 
 		p1.id = message.author.id
