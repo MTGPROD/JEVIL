@@ -1,13 +1,16 @@
 const Discord = require('discord.js')
 
 exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
+	
+	if(!args[0]) return message.channel.send('Exemple: `+game <create | ready | join | reset>`')
+	
 	if(args[0] === 'ready') {
 		if(gameData.active === false) return message.channel.send('Aucune partie en cours, faites `+game create` pour commencer une nouvelle partie.')
 		if(p1.character === false) return message.channel.send('Des joueurs n\'ont pas choisi de personnages, utilisez `+perso choose <nom du perso>` pour choisir un personnage.')
 		if(p2.character === false) return message.channel.send('Des joueurs n\'ont pas choisi de personnages, utilisez `+perso choose <nom du perso>` pour choisir un personnage.')
 		if(p3.character === false) return message.channel.send('Des joueurs n\'ont pas choisi de personnages, utilisez `+perso choose <nom du perso>` pour choisir un personnage.')
 		if(p4.character === false) return message.channel.send('Des joueurs n\'ont pas choisi de personnages, utilisez `+perso choose <nom du perso>` pour choisir un personnage.')
-		message.channel.send('La partie commence...')
+		message.channel.send('La partie commence...`')
 		gameData.active = true
 	    gameData.ready = true
     }
@@ -73,7 +76,7 @@ exports.run = (client, message, args, gameData, p1, p2, p3, p4) => {
 		gameData.active = true
 		p1.name = message.author.username
 		p1.tag = message.author.discriminator 
-		p1.id = message.author.id
+		p1.identity = message.author.id
 		p1.avatar = message.author.avatarURL
 		p1.active = true
 		message.channel.send("La partie a été créée, les autres joueurs faîtes `+game join` pour rejoindre la partie.")
