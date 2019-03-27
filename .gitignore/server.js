@@ -11,8 +11,8 @@ var gameData = {
      p2active: false,
      p3active: false,
      p4active: false,
-     time: 0, 
-     ready: false
+     time: 0
+     ready: false,
 } 
 
 var p1 = {
@@ -23,6 +23,7 @@ var p1 = {
 		avatar: false,
 		character: false,
         percentage: 0,
+        played: false, 
         chances: 0,
         smashPower: false,
         smashPowerChance: 0,
@@ -38,6 +39,7 @@ var p2 = {
 		character: false,
         percentage: 0,
         chances: 0,
+        played: false,
         smashPower: false,
         smashPowerChance: 0,
         mj: false
@@ -52,6 +54,7 @@ var p3 = {
 		character: false,
         percentage: 0,
         chances: 0,
+        played: false,
         smashPower: false,
         smashPowerChance: 0,
         mj: false
@@ -65,6 +68,7 @@ var p4 = {
 		avatar: false,
 		character: false,
         percentage: 0,
+        played: false,
         chances: 0,
         smashPower: false,
         smashPowerChance: 0,
@@ -75,7 +79,6 @@ client.on('ready', () => {
     client.user.setGame('Veuillez vous inscrire avant Avril | +register')
     client.user.setStatus('dnd')
 	console.log('Yes my body was ready.')
-	
 })
 
 client.on('message', message => {
